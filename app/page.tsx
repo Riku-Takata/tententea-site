@@ -29,14 +29,14 @@ export default function Home() {
       {loading && <LoadingIndicator setLoading={setLoading}/>}
       {!loading && (
         <main className="flex-1 animate-fadeIn">
-        <Header />
-        <News />
-        <Client />
-        <Menu />
-        <Operation />
-        <Map />
-        <Footer />
-      </main>
+          <Header />
+          <News />
+          <Client />
+          <Menu />
+          <Operation />
+          <Map />
+          <Footer />
+        </main>
       )}
     </>
   );

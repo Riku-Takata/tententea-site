@@ -4,7 +4,6 @@ import { Caudex } from 'next/font/google'
 import { Cormorant_Garamond } from 'next/font/google'
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const caudex = Caudex({
   subsets: ['latin'],
   weight: "400",

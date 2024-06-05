@@ -64,7 +64,7 @@ export default function Menu(){
                         </Image>
                         <div className="bg-white p-5 dark:bg-gray-950 border-t">
                             <h3 className="font-bold text-xl">Food</h3>
-                            <p className="text-sm text-gray-500">ホットサンドやパスタなどのフードからケーキなどのスイーツも</p>
+                            <p className="text-sm text-gray-500">ホットサンドなどフードからケーキなどのスイーツまで</p>
                             <div className="mx-auto grid grid-cols-2">
                                 <h4 className="font-semibold text-lg md:text-xl">¥880 +tax ~</h4>
                                 <h4 className="text-lg md:text-xl text-right">→</h4>

@@ -2,28 +2,17 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import Modal from "./modal";
-
-const faqs = [
-    {
-        question: 'Q1. よくある質問1',
-        answer: 'A1. よくある質問1に対する回答です。',
-    },
-    {
-        question: 'Q2. よくある質問2',
-        answer: 'A2. よくある質問2に対する回答です。',
-    },
-    {
-        question: 'Q3. よくある質問3',
-        answer: 'A3. よくある質問3に対する回答です。',
-    },
-];
+import ModalIn from "./modal-in";
+import ModalOut from "./modal-out";
 
 export default function Operation(){
     const operationRef = useRef(null);
-    const [isModalOpen, setModalOpen] = useState(false);
-    const openModal = () => setModalOpen(true);
-    const closeModal = () => setModalOpen(false);
+    const [isModalOpen1, setModalOpen1] = useState(false);
+    const [isModalOpen2, setModalOpen2] = useState(false);
+    const openModal1 = () => setModalOpen1(true);
+    const closeModal1 = () => setModalOpen1(false);
+    const openModal2 = () => setModalOpen2(true);
+    const closeModal2 = () => setModalOpen2(false);
     return(
         <section ref={operationRef} id="operation" className="w-full py-7 md:py-7 lg:py-12 border-y">
             <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
@@ -41,25 +30,26 @@ export default function Operation(){
                             テラス席：テーブル 十八席<br/><br/><br/>
                         </p>
                         <button
-                            className="bg-gray-300 text-lg px-8 py-6 rounded-md hover:bg-gray-400"
-                            onClick={openModal}
+                            className="md:max-w-[400px] w-full lg:max-w-[550px] block bg-gray-300 md:px-6 md:py-4 md:text-sm lg:text-lg text-lg lg:px-8 lg:py-6 px-8 py-6 rounded-md hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-[#908464] font-medium text-center"
+                            onClick={openModal1}
                         >
-                            店内でFoodsやSweetsといったお食事をされたいお客様 →
+                            店内でFoodsやSweets等のお食事をされたいお客様 →
                         </button>
-                        <Modal isOpen={isModalOpen} onClose={closeModal}>
-                            <h2 className="text-2xl font-bold mb-4">Modal Title</h2>
-                            <p className="mb-4">This is the content of the modal.</p>
-                            <button
-                            className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
-                            onClick={closeModal}
-                            >
-                            Close
-                            </button>
-                        </Modal>
+                        <ModalIn isOpen={isModalOpen1} onClose={closeModal1} />
+                        <p className="mx-auto pt-5 max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                            <br/>
+                        </p>
+                        <button
+                            className="md:max-w-[400px] w-full lg:max-w-[550px] block bg-gray-300 md:px-6 md:py-4 md:text-sm lg:text-lg text-lg lg:px-8 lg:py-6 px-8 py-6 rounded-md hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-[#908464] font-medium text-center"
+                            onClick={openModal2}
+                        >
+                            お食事以外のDrinkやGelatoをご注文したいお客様 →
+                        </button>
+                        <ModalOut isOpen2={isModalOpen2} onClose2={closeModal2} />
                     </div>
                     <Image
                         alt="Operation"
-                        className="mx-auto overflow-hidden rounded-t-xl object-cover"
+                        className="mx-auto overflow-hidden rounded-xl object-cover"
                         height="1270"
                         src="/tententea2.png"
                         width="1270"
