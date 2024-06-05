@@ -23,7 +23,7 @@ export default function Map(){
                                 <div className="grid gap-1">
                                     <h3 className="text-lg font-bold">【電車をご利用の場合】</h3>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    JR富山駅（北口）より徒歩15分
+                                    JR富山駅（北口）より徒歩15funn
                                     </p>
                                 </div>
                                 <div className="grid gap-1">
