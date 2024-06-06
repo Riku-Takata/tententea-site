@@ -43,7 +43,7 @@ export default function Operation(){
                             className="md:max-w-[400px] w-full lg:max-w-[550px] block bg-gray-300 md:px-6 md:py-4 md:text-sm lg:text-lg text-lg lg:px-8 lg:py-6 px-8 py-6 rounded-md hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-[#908464] font-medium text-center"
                             onClick={openModal2}
                         >
-                            お食事以外のドリンクやジェラートをご注文したいお客様 →
+                            お食事以外のご注文したいお客様 →
                         </button>
                         <ModalOut isOpen2={isModalOpen2} onClose2={closeModal2} />
                     </div>

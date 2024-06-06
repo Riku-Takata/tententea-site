@@ -30,18 +30,18 @@ export default function AllMenu(){
             {   type: 'Special Tea',
                 type2: 'ICE / HOT',
                 items: [
-                    {name: 'ベリー抹茶ティー', price: '¥ 648', image:''},
-                    {name: 'カラメルほうじティー', price: '¥ 660', image:''},
-                    {name: 'オレンジアッサムティー', price: '¥ 648', image:''},
+                    {name: 'ベリー抹茶ティー', price: '¥ 648', image:'/sample.png'},
+                    {name: 'カラメルほうじティー', price: '¥ 660', image:'/sample.png'},
+                    {name: 'オレンジアッサムティー', price: '¥ 648', image:'/sample.png'},
                 ]
             },
             {   type: 'Standard Tea',
                 type2: 'ICE / HOT',
                 items: [
-                    {name: '紅茶', price: '¥ 432', image:''},
-                    {name: 'ほうじ茶', price: '¥ 432', image:''},
-                    {name: '鉄観音烏龍茶', price: '¥ 432', image:''},
-                    {name: 'ジャスミン緑茶', price: '¥ 432', image:''},
+                    {name: '紅茶', price: '¥ 432', image:'/sample.png'},
+                    {name: 'ほうじ茶', price: '¥ 432', image:'/sample.png'},
+                    {name: '鉄観音烏龍茶', price: '¥ 432', image:'/sample.png'},
+                    {name: 'ジャスミン緑茶', price: '¥ 432', image:'/sample.png'},
                     ]
             },
             {   type: '',
@@ -57,20 +57,20 @@ export default function AllMenu(){
             {   type: '本格中国茶',
                 type2: 'HOT',
                 items: [
-                    {name: '黄金桂(烏龍茶)', price: '¥ 540', image:''},
-                    {name: '四季春茶(烏龍茶)', price: '¥ 540', image:''},
-                    {name: '白牡丹(白茶)', price: '¥ 540', image:''},
-                    {name: '茉莉香片(ジャスミン茶)', price: '¥ 540', image:''},
-                    {name: '龍井茶(緑茶)', price: '¥ 540', image:''},
+                    {name: '黄金桂(烏龍茶)', price: '¥ 540', image:'/sample.png'},
+                    {name: '四季春茶(烏龍茶)', price: '¥ 540', image:'/sample.png'},
+                    {name: '白牡丹(白茶)', price: '¥ 540', image:'/sample.png'},
+                    {name: '茉莉香片(ジャスミン茶)', price: '¥ 540', image:'/sample.png'},
+                    {name: '龍井茶(緑茶)', price: '¥ 540', image:'/sample.png'},
                     ]
             },
             {   type: 'コーヒー',
                 type2: 'ICE / HOT',
                 items: [
-                    {name: 'ブラックコーヒー', price: '¥ 432', image:''},
-                    {name: 'カフェラテ', price: '¥ 518', image:''},
-                    {name: 'キャラメルラテ', price: '¥ 561', image:''},
-                    {name: 'アーモンドキャラメルラテ', price: '¥ 561', image:''},
+                    {name: 'ブラックコーヒー', price: '¥ 432', image:'/sample.png'},
+                    {name: 'カフェラテ', price: '¥ 518', image:'/sample.png'},
+                    {name: 'キャラメルラテ', price: '¥ 561', image:'/sample.png'},
+                    {name: 'アーモンドキャラメルラテ', price: '¥ 561', image:'/sample.png'},
                     ]
             },
             {   type: '黒糖ミルクラテ ¥ 507',
@@ -85,65 +85,65 @@ export default function AllMenu(){
             {   type: 'Foods',
                 type2: 'Hot Sandwiches',
                 items: [
-                    {name: '立山ホークのトマト煮', price: '¥ 1580', image:''},
-                    {name: '色々きのこのクリームソース煮', price: '¥ 1480', image:''},
-                    {name: 'シュリンプフリットと自家製タルタル', price: '¥ 1380', image:''},
-                    {name: 'スモークサーモンとクリームチーズ', price: '¥ 1479', image:''},
+                    {name: '立山ホークのトマト煮', price: '¥ 1580', image:'/sample.png'},
+                    {name: '色々きのこのクリームソース煮', price: '¥ 1480', image:'/sample.png'},
+                    {name: 'シュリンプフリットと自家製タルタル', price: '¥ 1380', image:'/sample.png'},
+                    {name: 'スモークサーモンとクリームチーズ', price: '¥ 1479', image:'/sample.png'},
                     ]
             },
             {   type: '',
                 type2: 'Others',
                 items: [
-                    {name: '色々やさいのファーマーズシーザー', price: '¥ 1380', image:''},
-                    {name: '煮込みデミグラスハンバーグ', price: '¥ 1580', image:''},
-                    {name: 'モッツアレラと厚切りベーコンのトマトソースパスタ', price: '¥ 1580', image:''},
-                    {name: 'デミグラスソースのふわふわオムライス', price: '¥ 1380', image:''},
+                    {name: '色々やさいのファーマーズシーザー', price: '¥ 1380', image:'/sample.png'},
+                    {name: '煮込みデミグラスハンバーグ', price: '¥ 1580', image:'/sample.png'},
+                    {name: 'モッツアレラと厚切りベーコンのトマトソースパスタ', price: '¥ 1580', image:'/sample.png'},
+                    {name: 'デミグラスソースのふわふわオムライス', price: '¥ 1380', image:'/sample.png'},
                     ]
             },
             {   type: 'Sweets',
                 type2: '',
                 items: [
-                    {name: 'ふわとろデニッシュフレンチトースト', price: '¥ 880', image:''},
-                    {name: '能登ミルクジェラートとWベリーのデニッシュフレンチトースト', price: '¥ 1080', image:''},
-                    {name: 'メルティーショートケーキ', price: '¥ 980', image:''},
-                    {name: 'マンゴーとジェラートのアーモンドミルクワッフル', price: '¥ 980', image:''},
+                    {name: 'ふわとろデニッシュフレンチトースト', price: '¥ 880', image:'/sample.png'},
+                    {name: '能登ミルクジェラートとWベリーのデニッシュフレンチトースト', price: '¥ 1080', image:'/sample.png'},
+                    {name: 'メルティーショートケーキ', price: '¥ 980', image:'/sample.png'},
+                    {name: 'マンゴーとジェラートのアーモンドミルクワッフル', price: '¥ 980', image:'/sample.png'},
                     ]
             },
             {   type: 'SET',
                 type2: '+ ¥330',
                 items: [
-                    {name: 'ブラックコーヒー(Hot/Ice)', price: '', image:''},
-                    {name: '紅茶(Hot/Ice)', price: '', image:''},
-                    {name: '烏龍茶(Hot/Ice)', price: '', image:''},
-                    {name: 'アップルジュース', price: '', image:''},
+                    {name: 'ブラックコーヒー(Hot/Ice)', price: '', image:'/sample.png'},
+                    {name: '紅茶(Hot/Ice)', price: '', image:'/sample.png'},
+                    {name: '烏龍茶(Hot/Ice)', price: '', image:'/sample.png'},
+                    {name: 'アップルジュース', price: '', image:'/sample.png'},
                     ]
             },
             {   type: '',
                 type2: '+ ¥440',
                 items: [
-                    {name: 'カフェラテ(Hot/Ice)', price: '', image:''},
-                    {name: '本格中国茶黄金桂(Hot)', price: '', image:''},
-                    {name: '本格中国茶白牡丹(Hot)', price: '', image:''},
-                    {name: '本格中国茶茉莉香片(Hot)', price: '', image:''},
-                    {name: '高級中国茶龍井(Hot)', price: '', image:''},
-                    {name: '高級中国茶四季春(Hot)', price: '', image:''},
+                    {name: 'カフェラテ(Hot/Ice)', price: '', image:'/sample.png'},
+                    {name: '本格中国茶黄金桂(Hot)', price: '', image:'/sample.png'},
+                    {name: '本格中国茶白牡丹(Hot)', price: '', image:'/sample.png'},
+                    {name: '本格中国茶茉莉香片(Hot)', price: '', image:'/sample.png'},
+                    {name: '高級中国茶龍井(Hot)', price: '', image:'/sample.png'},
+                    {name: '高級中国茶四季春(Hot)', price: '', image:'/sample.png'},
                     ]
             },
             {   type: '',
                 type2: '+ ¥660 (中国茶をポットでお出しします)',
                 items: [
-                    {name: '本格中国茶黄金桂(Hot)', price: '', image:''},
-                    {name: '本格中国茶白牡丹(Hot)', price: '', image:''},
-                    {name: '本格中国茶茉莉香片(Hot)', price: '', image:''},
-                    {name: '高級中国茶龍井(Hot)', price: '', image:''},
-                    {name: '高級中国茶四季春(Hot)', price: '', image:''},
+                    {name: '本格中国茶黄金桂(Hot)', price: '', image:'/sample.png'},
+                    {name: '本格中国茶白牡丹(Hot)', price: '', image:'/sample.png'},
+                    {name: '本格中国茶茉莉香片(Hot)', price: '', image:'/sample.png'},
+                    {name: '高級中国茶龍井(Hot)', price: '', image:'/sample.png'},
+                    {name: '高級中国茶四季春(Hot)', price: '', image:'/sample.png'},
                     ]
             },
             {   type: '',
                 type2: 'デザートジェラート',
                 items: [
-                    {name: 'シングルジェラート(カップ/コーン)', price: '¥ 429', image:''},
-                    {name: 'ダブルジェラート(カップ/コーン)', price: '¥ 539', image:''},
+                    {name: 'シングルジェラート(カップ/コーン)', price: '¥ 429', image:'/sample.png'},
+                    {name: 'ダブルジェラート(カップ/コーン)', price: '¥ 539', image:'/sample.png'},
                     ]
             },
         ],
@@ -151,8 +151,8 @@ export default function AllMenu(){
         {   type: '',
             type2: '',
             items: [
-                {name: 'シングルジェラート（カップ / コーン）', price: '¥ 432', image:''},
-                {name: 'ダブルジェラート（カップ / コーン）', price: '¥ 540', image:''},
+                {name: 'シングルジェラート（カップ / コーン）', price: '¥ 432', image:'/sample.png'},
+                {name: 'ダブルジェラート（カップ / コーン）', price: '¥ 540', image:'/sample.png'},
                 ]
         },
         {   type: 'Kinds',
@@ -218,12 +218,22 @@ export default function AllMenu(){
                             <div key={index}>
                                 <h2 className="p-2 text-xl font-bold mb-4">{group.type}</h2>
                                 <h5 className="p-5 mb-4 text-gray-800">{group.type2}</h5>
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                {group.items.map((item, idx) => (
-                                    <div key={idx} className="p-4 border text-lg rounded-lg bg-gray-100">
-                                    {item.name}<br/>{item.price}
-                                    </div>
-                                ))}
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {group.items.map((item, idx) => (
+                                        <div key={idx} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 m-3">
+                                            {item.image && (
+                                                <Image
+                                                src={item.image}
+                                                alt="Menu Image"
+                                                width={300}
+                                                height={200}
+                                                className="rounded-lg mb-4 object-cover"
+                                                />
+                                            )}
+                                            <h3 className="text-xl font-semibold">{item.name}</h3>
+                                            <h5 className="font-bold text-lg mt-4">{item.price}</h5>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             ))}

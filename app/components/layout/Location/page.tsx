@@ -45,9 +45,9 @@ export default function Map(){
                             <div className="pt-10 mx-auto grid items-center gap-8 sm:max-w-4xl md:gap-12 lg:max-w-5xl">
                                 <div className="grid gap-1">
                                     <h3 className="text-lg font-bold">＜ 営業時間 ＞</h3>
-                                    <p className="text-2xl text-gray-500 dark:text-gray-400">
+                                    <h5 className="text-lg text-gray-500 dark:text-gray-400">
                                     11:00 ~ 20:00
-                                    </p>
+                                    </h5>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
                                     水曜定休日
                                     </p>

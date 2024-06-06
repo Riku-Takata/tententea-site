@@ -36,3 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
 }
+
+.number-font {
+  font-family: 'Courier New', Courier, monospace; /* 数字に適用するフォントを指定 */
+}
