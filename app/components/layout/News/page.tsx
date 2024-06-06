@@ -1,12 +1,6 @@
 "use client"
 
-import { AvatarImage, AvatarFallback, Avatar } from "./ui/avatar"
-import Link from "next/link"
-import { Card } from "./ui/card"
-import { CarouselItem, CarouselContent, CarouselPrevious, CarouselNext, CarouselUI } from "./ui/carousel"
-import { Carousel } from "flowbite-react";
 import { useRef } from "react";
-import Image from "next/image"
 import NewsCarousel from "./carsor"
 
 export default function News() {

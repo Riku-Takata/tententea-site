@@ -1,7 +1,5 @@
 "use client"
 
-import Image from "next/image";
-import Link from "next/link";
 import Client from "./components/layout/Concept/page";
 import Menu from "./components/layout/Menu/page";
 import Operation from "./components/layout/Operation/page";
@@ -11,7 +9,7 @@ import Header from "./components/layout/Header/page";
 import { useEffect, useState } from "react";
 import Footer from "./components/layout/Footer/page";
 import LoadingIndicator from "./components/layout/LoadingIndicater/page";
-import dynamic from "next/dynamic";
+import Auth from "./components/useAuth/useAuth";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +33,7 @@ export default function Home() {
           <Menu />
           <Operation />
           <Map />
+          <Auth/>
           <Footer />
         </main>
       )}

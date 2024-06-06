@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Footer from '../layout/Footer/page';
 import ComHeader from '../layout/ComHeader/page';
+import Auth from "../useAuth/useAuth";
 import Link from 'next/link';
 
 interface FAQ {
@@ -74,10 +75,11 @@ export default function Contact() {
                     </div>
                 </div>
                 <div className="flex flex-col space-y-4 text-right mx-auto max-w-5xl pt-5 lg:gap-12 hover:text-blue-600">
-                        <Link href="/">
-                            <p>トップページへ戻る →</p>
-                        </Link>
-                    </div>
+                    <Link href="/">
+                        <p>トップページへ戻る →</p>
+                    </Link>
+                </div>
+                <Auth/>
             </div>
             <Footer />
         </section>
