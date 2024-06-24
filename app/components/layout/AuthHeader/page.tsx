@@ -11,13 +11,13 @@ export default function AuthHeader({ session }: { session: Session | null }){
                 <LogoView />
             </Link>
             {session ? (
-                <div className="flex items-center space-x-5">
+                <div>
                 <Link href="/settings/profile">
                     <img src="/user_check_icon.png" />
                 </Link>
                 </div>
             ) : (
-                <div className="flex items-center space-x-5">
+                <div>
                 <Link href="/auth/Sighup">
                     <img src="/user_icon.png" />
                 </Link>

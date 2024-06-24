@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from 'react';
-import Footer from '../layout/Footer/page';
 import Link from 'next/link';
 import ComHeader from '../layout/ComHeader/page';
 
@@ -78,7 +77,6 @@ export default function Contact() {
                     </Link>
                 </div>
             </div>
-            <Footer />
         </section>
     );
 }

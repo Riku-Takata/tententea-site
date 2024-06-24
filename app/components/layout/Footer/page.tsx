@@ -20,9 +20,9 @@ export default function Footer(){
                         <Image
                             alt="instagram_logo"
                             src="/instagram_logo.png"
-                            className="p-2"
-                            width={100}
-                            height={100}
+                            className="p-2 pt-8"
+                            width={50}
+                            height={50}
                         />
                     </a>
                     <p className='justify-end pt-10 text-left text-sm'>
