@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Footer from '../layout/Footer/page';
-import ComHeader2 from '../layout/ComHeader2/page';
 import Link from 'next/link';
+import ComHeader from '../layout/ComHeader/page';
 
 interface FAQ {
     question: string;
@@ -38,7 +38,7 @@ export default function Contact() {
 
     return (
         <section className="flex-1">
-            <ComHeader2 />
+            <ComHeader />
             <div className="w-full py-8 md:py-8 lg:py-14">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">

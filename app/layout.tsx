@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Caudex } from 'next/font/google'
 import { Cormorant_Garamond } from 'next/font/google'
 import "./globals.css";

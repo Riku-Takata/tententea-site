@@ -11,9 +11,13 @@ const nextConfig = {
         });
         return config;
     },
-    images: {
-        disableStaticImages: true, // import‚µ‚½‰æ‘œ‚ÌŒ^’è‹`İ’è‚ğ–³Œø‚É‚·‚é
-    },
+    experimental: {
+        serverActions: true,
+      },
+      images: {
+        disableStaticImages: true,
+        domains: ['xxxx.supabase.co'],
+      },
 };
 
 export default nextConfig;
