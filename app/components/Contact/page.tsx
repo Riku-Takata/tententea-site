@@ -1,40 +1,10 @@
 "use client"
 
-import { useState } from 'react';
 import Link from 'next/link';
 import ComHeader from '../layout/ComHeader/page';
-
-interface FAQ {
-    question: string;
-    answer: string;
-}
-
-const faqs: FAQ[] = [
-    {
-        question: 'Q1. よくある質問1',
-        answer: 'A1. よくある質問1に対する回答です。',
-    },
-    {
-        question: 'Q2. よくある質問2',
-        answer: 'A2. よくある質問2に対する回答です。',
-    },
-    {
-        question: 'Q3. よくある質問3',
-        answer: 'A3. よくある質問3に対する回答です。',
-    },
-];
+import FAQ from '../layout/Faq/page';
 
 export default function Contact() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const toggleFAQ = (index: number) => {
-        if (openIndex === index) {
-        setOpenIndex(null);
-        } else {
-        setOpenIndex(index);
-        }
-    };
-
     return (
         <section className="flex-1">
             <ComHeader />
@@ -52,25 +22,8 @@ export default function Contact() {
                             </p>
                         </div>
                     </div>
-                    <h2 className="text-2xl font-semibold mb-4">FAQ - よくあるご質問</h2>
-                    <div className="max-w-2xl mx-auto space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div key={index} className="border rounded-md px-10 py-4 bg-white shadow">
-                        <button
-                            className="w-full text-left focus:outline-none"
-                            onClick={() => toggleFAQ(index)}
-                        >
-                            <div className="flex justify-between items-center">
-                            <span className="font-medium">{faq.question}</span>
-                            </div>
-                        </button>
-                        {openIndex === index && (
-                            <div className="mt-2 text-gray-700">{faq.answer}</div>
-                        )}
-                        </div>
-                    ))}
-                    </div>
                 </div>
+                <FAQ />
                 <div className="flex flex-col space-y-4 text-right mx-auto max-w-5xl pt-5 lg:gap-12 hover:text-blue-600">
                     <Link href="/">
                         <p>トップページへ戻る →</p>
