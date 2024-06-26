@@ -49,7 +49,7 @@ const LoginForm = () => {
         }
 
         // トップページに遷移
-        router.push('/')
+        router.push('/components/Management')
         } catch (error) {
         setMessage('エラーが発生しました。' + error)
         return
@@ -91,13 +91,13 @@ const LoginForm = () => {
                         />
                         <div className="my-3 text-center text-sm text-red-500">{errors.password?.message}</div>
                     </div>
-                    <p className="text-xs text-right">
-                        パスワードを忘れた方は
-                        <Link href="/auth/PasswordReset" className="text-blue-500 hover:text-blue-300">
-                            こちら
-                        </Link>
-                    </p>
                 </div>
+                <p className="text-xs text-right">
+                    パスワードを忘れた方は
+                    <Link href="/components/Password" className="text-blue-500 hover:text-blue-300">
+                        こちら
+                    </Link>
+                </p>
                 {/* ログインボタン */}
                 <div className="mb-5">
                     {loading ? (

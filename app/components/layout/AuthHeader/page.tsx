@@ -12,14 +12,22 @@ export default function AuthHeader({ session }: { session: Session | null }){
             </Link>
             {session ? (
                 <div>
-                <Link href="/settings/profile">
-                    <img src="/user_check_icon.png" />
+                <Link href="/Setting/Logout">
+                    <img
+                        height={40}
+                        width={40}
+                        src="/user_check_icon.png"
+                    />
                 </Link>
                 </div>
             ) : (
                 <div>
-                <Link href="/auth/Sighup">
-                    <img src="/user_icon.png" />
+                <Link href="/components/Management">
+                    <img
+                        height={40}
+                        width={40}
+                        src="/user_icon.png"
+                    />
                 </Link>
                 </div>
             )}

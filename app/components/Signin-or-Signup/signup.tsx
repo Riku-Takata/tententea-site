@@ -18,6 +18,7 @@ const SignupForm = () => {
     const supabase = createClientComponentClient<Database>()
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
+    const [showAlert, setShowAlert] = useState(false);
 
     const {
         register,
@@ -65,19 +66,32 @@ const SignupForm = () => {
 
         // 入力フォームクリア
         reset()
-        setMessage(
-            '本登録用のURLを記載したメールを送信しました。メールをご確認の上、メール本文中のURLをクリックして、本登録を行ってください。'
-        )
+        setShowAlert(true)
         } catch (error) {
         setMessage('エラーが発生しました。' + error)
         return
         } finally {
         setLoading(false)
+        setTimeout(() => {
+            router.refresh()
+        }, 3000);
         }
     }
 
     return(
         <div>
+            {showAlert && (
+                <div className="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-6" role="alert">
+                <p className="font-bold">ご登録ありがとうございます</p>
+                <p>本登録用のURLを記載したメールをお送りしました。メールをご確認の上、メール本文中のURLをクリックして、本登録を行ってください。</p>
+                <button
+                    onClick={() => setShowAlert(false)}
+                    className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                >
+                    閉じる
+                </button>
+                </div>
+            )}
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">ユーザー名</label>

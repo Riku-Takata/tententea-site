@@ -3,10 +3,11 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import type { Database } from '@/lib/database.types'
-import AuthHeader from '../layout/AuthHeader/page'
+import AuthHeader from './components/layout/AuthHeader/page'
+
 
 // 認証状態の監視
-const SupabaseListener = async () => {
+const SupabaseListener_H = async () => {
   const supabase = createServerComponentClient<Database>({ cookies })
 
   // セッションの取得
@@ -17,4 +18,4 @@ const SupabaseListener = async () => {
   return <AuthHeader session={session} />
 }
 
-export default SupabaseListener
+export default SupabaseListener_H
