@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ComHeader from "../layout/ComHeader/page";
 import { useEffect, useState } from "react";
+import Footer from "../layout/Footer/page";
 
 interface Items{
     name: string;
@@ -244,6 +245,7 @@ export default function AllMenu(){
                     </div>
                 </div>
             </div>
+            <Footer />
         </main>
     )
 }

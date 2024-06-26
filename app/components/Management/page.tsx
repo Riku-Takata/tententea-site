@@ -3,6 +3,9 @@ import { Database } from '@/lib/database.types';
 import SupabaseListener from './supabase_listener';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
+import AuthFooter from '../layout/AuthFooter/page';
+import InstructionPage from '../layout/InsMng/page';
+import AuthForms from '../Signin-or-Signup/page';
 
 const Manager = async() =>{
     const supabase = createServerComponentClient<Database>({
@@ -17,15 +20,16 @@ const Manager = async() =>{
     return (
         <div className="flex-1">
             <SupabaseListener/>
-            <div className="text-center text-xl">
+            <div className="min-h-[750px] bg-gray-100 flex items-center justify-center p-4">
                 {session ?
                 <div>
-                    ログイン済
+                    <InstructionPage />
                 </div> :
-                <div>
-                    未ログイン
+                <div className='grid'>
+                    <AuthForms />
                 </div>}
             </div>
+            <AuthFooter />
         </div>
     );
 }

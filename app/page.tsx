@@ -33,6 +33,7 @@ export default function Home() {
           <Menu />
           <Operation />
           <Map />
+          <Footer />
         </main>
       )}
     </>

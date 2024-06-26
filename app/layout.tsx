@@ -34,7 +34,6 @@ export default function RootLayout({
     <html lang="ja">
       <body className={caudex.variable + ' ' + cormorant_garamond.variable}>
         {children}
-        <Footer />
       </body>
     </html>
   );
