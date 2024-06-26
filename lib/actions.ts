@@ -1,8 +1,14 @@
 import { z } from 'zod'
 
-const regex = /^(?=.*[A-Z])[0-9a-zA-Z]*$/;
+const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-z]{8,}$/;
 export const SignUpFormSchema = z
   .object({
+    name: z
+     .string({
+        required_error: "必須項目です。",
+      })
+      .min(1, { message: '名前を入力してください。' })
+      .max(50, { message: '50字以内で入力してください' }),
     email: z
       .string({
         required_error: "必須項目です。",
