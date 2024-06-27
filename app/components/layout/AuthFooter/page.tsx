@@ -14,7 +14,7 @@ export default function AuthFooter({ session }: { session: Session | null }){
                         <div className='flex-1 w-screen'>
                             <div className='flex px-7 py-5 items-center justify-between'>
                                 <div>
-                                    <Link href="/">
+                                    <Link href="/components/Management">
                                         <LogoView />
                                     </Link>
                                     <p className="pt-2">お問い合わせ</p>
@@ -46,7 +46,7 @@ export default function AuthFooter({ session }: { session: Session | null }){
                         <div className='flex-1 w-screen'>
                             <div className='flex px-7 py-5 items-center justify-between'>
                                 <div>
-                                    <Link href="/">
+                                    <Link href="/components/Management">
                                         <LogoView />
                                     </Link>
                                     <p className="pt-2">お問い合わせ</p>

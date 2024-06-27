@@ -7,7 +7,7 @@ import { Session } from "@supabase/auth-helpers-nextjs"
 export default function AuthHeader({ session }: { session: Session | null }){
     return(
         <nav className='flex px-7 py-5 items-center justify-between bg-[#7d6f49] text-white'>
-            <Link href="/">
+            <Link href="/components/Management">
                 <LogoView />
             </Link>
             {session ? (

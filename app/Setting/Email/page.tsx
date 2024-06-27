@@ -16,7 +16,7 @@ const ProfilePage = async () => {
 
     // 未認証の場合、リダイレクト
     if (!session) {
-        redirect('/auth/login')
+        redirect('/components/Management')
     }
 
     // return <Profile />

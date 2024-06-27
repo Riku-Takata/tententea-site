@@ -1,7 +1,6 @@
 'use client'
 
 import {
-    UserCircleIcon,
     EnvelopeIcon,
     KeyIcon,
     ArrowLeftOnRectangleIcon,
@@ -10,28 +9,26 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import ComHeader from '../components/layout/ComHeader/page'
 import Footer from '../components/layout/Footer/page'
+import AuthHeader from '../components/layout/AuthHeader/page'
+import SupabaseListener_H from '../supabase_listener_H'
+import SupabaseListener_F from '../supabase_listener_F'
 
 // ナビゲーション
 const subNavigation = [
     {
-        name: 'プロフィール',
-        icon: UserCircleIcon,
-        href: '/Setting/Profiles',
-    },
-    {
-        name: 'メールアドレス',
+        name: 'メールアドレス変更',
         icon: EnvelopeIcon,
-        href: '/Settings/Email',
+        href: '/Setting/Email',
     },
     {
-        name: 'パスワード',
+        name: 'パスワード変更',
         icon: KeyIcon,
-        href: '/Settings/Password',
+        href: '/Setting/Password',
     },
     {
         name: 'ログアウト',
         icon: ArrowLeftOnRectangleIcon,
-        href: '/Settings/Logout',
+        href: '/Setting/Logout',
     },
     ]
 
@@ -41,7 +38,7 @@ const subNavigation = [
 
     return (
         <div>
-            <ComHeader />
+            <SupabaseListener_H />
             <div className="grid grid-cols-3 gap-3 m-5 space-x-5">
                 <div className="col-span-1 text-sm space-y-1 font-bold flex flex-col">
                     {subNavigation.map((item, index) => (
@@ -59,7 +56,7 @@ const subNavigation = [
                 </div>
                 <div className="col-span-2">{children}</div>
             </div>
-            <Footer />
+            <SupabaseListener_F />
         </div>
     )
 }

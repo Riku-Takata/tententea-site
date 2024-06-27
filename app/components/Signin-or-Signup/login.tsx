@@ -55,7 +55,9 @@ const LoginForm = () => {
         return
         } finally {
         setLoading(false)
-        router.refresh()
+        setTimeout(() => {
+            router.refresh()
+        }, 3000);
         }
     }
 
@@ -94,7 +96,7 @@ const LoginForm = () => {
                 </div>
                 <p className="text-xs text-right">
                     パスワードを忘れた方は
-                    <Link href="/components/Password" className="text-blue-500 hover:text-blue-300">
+                    <Link href="/components/ResetPassword" className="text-blue-500 hover:text-blue-300">
                         こちら
                     </Link>
                 </p>
