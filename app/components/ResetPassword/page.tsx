@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { AuthError } from '@supabase/supabase-js';
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import SupabaseListener_H from '@/app/supabase_listener_H';
-import SupabaseListener_F from '@/app/supabase_listener_F';
 
 /**
  * パスワードリセット前のメール送信用画面
