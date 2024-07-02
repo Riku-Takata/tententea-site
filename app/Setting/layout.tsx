@@ -7,9 +7,6 @@ import {
 } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import ComHeader from '../components/layout/ComHeader/page'
-import Footer from '../components/layout/Footer/page'
-import AuthHeader from '../components/layout/AuthHeader/page'
 import SupabaseListener_H from '../supabase_listener_H'
 import SupabaseListener_F from '../supabase_listener_F'
 

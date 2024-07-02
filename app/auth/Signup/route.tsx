@@ -17,7 +17,7 @@ const SignupPage = async () => {
 
     // 認証している場合、リダイレクト
     if (session) {
-        redirect('/')
+        redirect('/components/Management')
     }
 
     return <SignupForm />

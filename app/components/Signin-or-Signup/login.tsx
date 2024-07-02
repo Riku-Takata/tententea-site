@@ -96,7 +96,7 @@ const LoginForm = () => {
                 </div>
                 <p className="text-xs text-right">
                     パスワードを忘れた方は
-                    <Link href="/components/ResetPassword" className="text-blue-500 hover:text-blue-300">
+                    <Link href="/components/ResetPassword_Signout" className="text-blue-500 hover:text-blue-300">
                         こちら
                     </Link>
                 </p>
