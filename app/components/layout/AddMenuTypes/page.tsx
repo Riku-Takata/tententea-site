@@ -2,83 +2,117 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 
 interface AddTypeProps {
-    onAdd: () => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const AddTypeComponent: React.FC<AddTypeProps> = ({ onAdd }) => {
-    const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
-    const [formData, setFormData] = useState({
-        categoryId: '',
-        type1: '',
-        type2: '',
-    });
+interface Category {
+  id: string;
+  name: string;
+}
 
-    useEffect(() => {
-        fetchCategories();
-    }, []);
+const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [type1, setType1] = useState('');
+  const [type2, setType2] = useState('');
 
-    const fetchCategories = async () => {
-        const { data, error } = await supabase.from('categories').select('id, name');
-        if (error) console.error('Error fetching categories:', error);
-        else setCategories(data || []);
-    };
+  useEffect(() => {
+    if (isOpen) {
+      fetchCategories();
+    }
+  }, [isOpen]);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
+  const fetchCategories = async () => {
+    const { data, error } = await supabase.from('categories').select('*');
+    if (error) {
+      console.error('Error fetching categories:', error);
+    } else {
+      setCategories(data || []);
+    }
+  };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        const { data, error } = await supabase.from('types').insert([
-        { 
-            category_id: formData.categoryId,
-            type1: formData.type1,
-            type2: formData.type2 || null,
-        }
-        ]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (selectedCategory === null) return;
 
-        if (error) {
-        console.error('Error adding type:', error);
-        } else {
-        console.log('Type added:', data);
-        onAdd();
-        setFormData({
-            categoryId: '',
-            type1: '',
-            type2: '',
-        });
-        }
-    };
+    const { error } = await supabase
+      .from('types')
+      .insert([{ 
+        category_id: selectedCategory, 
+        type1, 
+        type2: type2 || null 
+      }]);
+    if (error) {
+      console.error('Error adding type:', error);
+    } else {
+      resetForm();
+      onClose();
+    }
+  };
 
-    return (
+  const resetForm = () => {
+    setSelectedCategory(null);
+    setType1('');
+    setType2('');
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-6 rounded-lg max-w-md w-full">
+        <h2 className="text-xl font-bold mb-4">新しいタイプを追加</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-        <select name="categoryId" value={formData.categoryId} onChange={handleInputChange} required>
-            <option value="">Select Category</option>
-            {categories.map(cat => (
-            <option key={cat.id} value={cat.id}>{cat.name}</option>
+          <select
+            value={selectedCategory || ''}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            required
+            className="w-full p-2 border rounded"
+          >
+            <option value="">カテゴリーを選択</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
             ))}
-        </select>
-        <input 
-            type="text" 
-            name="type1" 
-            value={formData.type1} 
-            onChange={handleInputChange} 
-            placeholder="Type 1" 
-            required 
-        />
-        <input 
-            type="text" 
-            name="type2" 
-            value={formData.type2} 
-            onChange={handleInputChange} 
-            placeholder="Type 2 (optional)" 
-        />
-        <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded">
-            Add Type
-        </button>
+          </select>
+
+          <input
+            type="text"
+            value={type1}
+            onChange={(e) => setType1(e.target.value)}
+            placeholder="タイプ1"
+            required
+            className="w-full p-2 border rounded"
+          />
+          <input
+            type="text"
+            value={type2}
+            onChange={(e) => setType2(e.target.value)}
+            placeholder="タイプ2 (オプション)"
+            className="w-full p-2 border rounded"
+          />
+          <div className="flex justify-end space-x-2">
+            <button
+              type="button"
+              onClick={() => { resetForm(); onClose(); }}
+              className="px-4 py-2 bg-gray-200 rounded"
+            >
+              キャンセル
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-green-500 text-white rounded"
+              disabled={!selectedCategory || !type1}
+            >
+              追加
+            </button>
+          </div>
         </form>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AddTypeComponent;
