@@ -66,7 +66,11 @@ const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <select
             value={selectedCategory || ''}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+            onChange={(e) => {
+              setSelectedCategory(e.target.value);
+              setType1('');
+              setType2('');
+            }}
             required
             className="w-full p-2 border rounded"
           >
@@ -78,21 +82,26 @@ const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
             ))}
           </select>
 
-          <input
-            type="text"
-            value={type1}
-            onChange={(e) => setType1(e.target.value)}
-            placeholder="タイプ1"
-            required
-            className="w-full p-2 border rounded"
-          />
-          <input
-            type="text"
-            value={type2}
-            onChange={(e) => setType2(e.target.value)}
-            placeholder="タイプ2 (オプション)"
-            className="w-full p-2 border rounded"
-          />
+          {selectedCategory && (
+            <>
+              <input
+                type="text"
+                value={type1}
+                onChange={(e) => setType1(e.target.value)}
+                placeholder="タイプ1"
+                required
+                className="w-full p-2 border rounded"
+              />
+              <input
+                type="text"
+                value={type2}
+                onChange={(e) => setType2(e.target.value)}
+                placeholder="タイプ2 (オプション)"
+                className="w-full p-2 border rounded"
+              />
+            </>
+          )}
+          
           <div className="flex justify-end space-x-2">
             <button
               type="button"
@@ -103,7 +112,7 @@ const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-green-500 text-white rounded"
+              className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-500 rounded"
               disabled={!selectedCategory || !type1}
             >
               追加

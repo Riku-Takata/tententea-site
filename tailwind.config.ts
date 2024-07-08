@@ -26,6 +26,8 @@ const config: Config = {
       animation: {
         slideIn: 'slideIn 1s ease-out forwards',
         fadeIn: 'fadeIn 1s ease-out forwards',
+        'spin-slow': 'spin 3s linear infinite',
+        'spin-slower': 'spin 5s linear infinite',
       },
     },
   },
