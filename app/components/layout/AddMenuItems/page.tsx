@@ -21,8 +21,6 @@ interface Type {
 }
 
 const AddMenuItemComponent: React.FC<AddMenuItemProps> = ({ isOpen, onClose }) => {
-  const public_url =
-    "https://{isffsgzshcbuvdkggfwf}.supabase.co/storage/v1/object/public/menu-images/images-folder/";
   const supabase = createClientComponentClient();
   const [categories, setCategories] = useState<Category[]>([]);
   const [types, setTypes] = useState<Type[]>([]);
@@ -112,7 +110,7 @@ const AddMenuItemComponent: React.FC<AddMenuItemProps> = ({ isOpen, onClose }) =
               throw new Error('画像のアップロードに失敗しました：' + uploadError.message);
             }
   
-            const imageUrl = `${public_url}${fileName}`;
+            const imageUrl = `${fileName}`;
   
             // menu_items テーブルへのデータ挿入
             const selectedType = types.find(t => t.type1 === selectedType1);
