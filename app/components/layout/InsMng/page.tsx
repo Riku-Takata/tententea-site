@@ -6,6 +6,7 @@ import { ChevronDown, Pencil, Plus, Trash2 } from 'lucide-react';
 import AddMenuItemComponent from '../AddMenuItems/page';
 import AddTypeComponent from '../AddMenuTypes/page';
 import EditMenuItemComponent from '../EditMenuItems/page';
+import DeleteMenuItemComponent from '../DelMenuItems/page';
 
 interface MenuItem {
   id: string;
@@ -217,14 +218,14 @@ const CafeMenuUI: React.FC = () => {
         />
       )}
 
-      {/* {isDeleteMenuOpen && selectedMenuItem && (
+      {isDeleteMenuOpen && selectedMenuItem && (
         <DeleteMenuItemComponent
           isOpen={isDeleteMenuOpen}
           onClose={() => setIsDeleteMenuOpen(false)}
           itemId={selectedMenuItem.id}
           onItemDeleted={handleItemDeleted}
         />
-      )} */}
+      )}
     </div>
   );
 };

@@ -162,7 +162,7 @@ export default function AllMenu() {
                   <h5 className="p-5 mb-4 text-gray-800">{group.type2}</h5>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {group.items.map((item, idx) => (
-                      <div key={idx} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 m-3">
+                      <div key={idx} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 m-3 flex flex-col items-center">
                         {item.image_url && (
                           <img
                             src={`${public_url}${item.image_url}`}
