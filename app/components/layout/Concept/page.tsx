@@ -1,9 +1,17 @@
 "use client"
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-export default function Client(){
-    const conceptRef = useRef(null);
+interface ConceptProps {
+    setRef: (node: HTMLElement | null) => void;
+}
+
+const Concept: React.FC<ConceptProps> = ({setRef}) =>{
+    const conceptRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        setRef(conceptRef.current);
+    }, [setRef]);
     return(
         <section ref={conceptRef} id="concept" className="w-full py-7 md:py-7 lg:py-12 bg-gray-100 dark:bg-gray-800">
             <div className="space-y-12 px-4 md:px-6">
@@ -51,3 +59,5 @@ export default function Client(){
         </section>
     )
 }
+
+export default Concept;

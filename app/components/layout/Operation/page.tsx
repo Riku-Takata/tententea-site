@@ -1,11 +1,14 @@
 "use client"
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ModalIn from "./modal-in";
 import ModalOut from "./modal-out";
 
-export default function Operation(){
+interface OperationProps {
+    setRef: (node: HTMLElement | null) => void;
+}
+const Operation: React.FC<OperationProps> = ({setRef}) =>{
     const operationRef = useRef(null);
     const [isModalOpen1, setModalOpen1] = useState(false);
     const [isModalOpen2, setModalOpen2] = useState(false);
@@ -13,6 +16,11 @@ export default function Operation(){
     const closeModal1 = () => setModalOpen1(false);
     const openModal2 = () => setModalOpen2(true);
     const closeModal2 = () => setModalOpen2(false);
+
+    useEffect(() => {
+        setRef(operationRef.current);
+    }, [setRef]);
+
     return(
         <section ref={operationRef} id="operation" className="w-full py-7 md:py-7 lg:py-12 border-y">
             <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
@@ -59,3 +67,5 @@ export default function Operation(){
         </section>
     )
 }
+
+export default Operation;

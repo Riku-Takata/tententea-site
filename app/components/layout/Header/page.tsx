@@ -1,60 +1,25 @@
 "use client";
 
 import Link from 'next/link';
-import Image from 'next/image';
 import React, { useState } from 'react';
 import { LogoView } from '@/app/LogoView';
 
-export default function Header() {
+type SectionName = 'concept' | 'menu' | 'operation';
+
+interface HeaderProps {
+    onScrollToSection: (sectionName: SectionName) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onScrollToSection }) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const menuFunction = () => {
         setOpenMenu(!openMenu);
     };
 
-    const handleScrollToConcept = () => {
-        setOpenMenu(!openMenu);
-        const section = document.getElementById('concept');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const handleScrollToMenu = () => {
-        setOpenMenu(!openMenu);
-        const section = document.getElementById('menu');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const handleScrollToOperation = () => {
-        setOpenMenu(!openMenu);
-        const section = document.getElementById('operation');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const ScrollToConcept = () => {
-        const section = document.getElementById('concept');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const ScrollToMenu = () => {
-        const section = document.getElementById('menu');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const ScrollToOperation = () => {
-        const section = document.getElementById('operation');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+    const handleScroll = (sectionName: SectionName) => {
+        setOpenMenu(false);
+        onScrollToSection(sectionName);
     };
 
     return (
@@ -74,13 +39,13 @@ export default function Header() {
                                 close
                                 </button>
                             </li>
-                            <li onClick={handleScrollToConcept} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
+                            <li onClick={() => handleScroll('concept')} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
                                 Concept
                             </li>
-                            <li onClick={handleScrollToMenu} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
+                            <li onClick={() => handleScroll('menu')} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
                                 Menu
                             </li>
-                            <li onClick={handleScrollToOperation} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
+                            <li onClick={() => handleScroll('operation')} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
                                 Operation
                             </li>
                             <li onClick={menuFunction} className='p-4 font-medium hover:underline underline-offset-4 border-b border-gray-300'>
@@ -94,13 +59,13 @@ export default function Header() {
             ) : undefined}
             <div className='font-bold flex-grow'>
                 <ul className='md:flex justify-end hidden flex-1 text-left text-lg'>
-                    <li onClick={ScrollToConcept} className='p-2 font-medium hover:underline underline-offset-4'>
+                    <li onClick={() => onScrollToSection('concept')} className='p-2 font-medium hover:underline underline-offset-4'>
                         Concept
                     </li>
-                    <li onClick={ScrollToMenu} className='p-2 font-medium hover:underline underline-offset-4'>
+                    <li onClick={() => onScrollToSection('menu')} className='p-2 font-medium hover:underline underline-offset-4'>
                         Menu
                     </li>
-                    <li onClick={ScrollToOperation} className='p-2 font-medium hover:underline underline-offset-4'>
+                    <li onClick={() => onScrollToSection('operation')} className='p-2 font-medium hover:underline underline-offset-4'>
                         Operation
                     </li>
                     <li className='p-2 font-medium hover:underline underline-offset-4'>
@@ -120,3 +85,5 @@ export default function Header() {
         </nav>
     );
 }
+
+export default Header;

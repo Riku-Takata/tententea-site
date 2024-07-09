@@ -2,10 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-export default function Menu(){
+interface MenuProps{
+    setRef: (node: HTMLElement | null) => void;
+}
+const Menu: React.FC<MenuProps> = ({setRef}) => {
     const menuRef = useRef(null);
+
+    useEffect(() => {
+        setRef(menuRef.current);
+    }, []);
     return(
         <section ref={menuRef} id="menu" className="w-full py-8 md:py-8 lg:py-14">
             <div className="px-4 md:px-6">
@@ -101,3 +108,5 @@ export default function Menu(){
         </section>
     )
 }
+
+export default Menu;
