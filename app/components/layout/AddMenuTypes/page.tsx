@@ -40,7 +40,7 @@ const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
       .from('types')
       .insert([{ 
         category_id: selectedCategory, 
-        type1, 
+        type1: type1 || null, 
         type2: type2 || null 
       }]);
     if (error) {
@@ -96,7 +96,7 @@ const AddTypeComponent: React.FC<AddTypeProps> = ({ isOpen, onClose }) => {
                 type="text"
                 value={type2}
                 onChange={(e) => setType2(e.target.value)}
-                placeholder="タイプ2 (オプション)"
+                placeholder="タイプ2"
                 className="w-full p-2 border rounded"
               />
             </>
